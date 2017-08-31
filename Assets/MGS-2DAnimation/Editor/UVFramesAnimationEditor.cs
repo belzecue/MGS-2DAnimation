@@ -38,7 +38,7 @@ namespace Developer.Animation
             {
                 script.ApplyUVMapsInEditor();
             }
-        }//OnI...()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

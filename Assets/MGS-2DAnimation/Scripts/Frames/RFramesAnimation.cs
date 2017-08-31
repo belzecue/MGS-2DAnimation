@@ -42,7 +42,7 @@ namespace Developer.Animation
         {
             base.Start();
             mRenderer = GetComponent<Renderer>();
-        }//Start()_end
+        }
 
         /// <summary>
         /// Get image frames count.
@@ -51,7 +51,7 @@ namespace Developer.Animation
         protected override int GetFramesCount()
         {
             return frames.Length;
-        }//GetF...()_end
+        }
 
         /// <summary>
         /// Set current frame to renderer.
@@ -60,7 +60,7 @@ namespace Developer.Animation
         protected override void SetFrame(int frameIndex)
         {
             mRenderer.material.mainTexture = frames[frameIndex];
-        }//SetFrame()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

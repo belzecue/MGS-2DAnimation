@@ -60,7 +60,7 @@ namespace Developer.Animation
             base.Start();
             mRenderer = GetComponent<Renderer>();
             ApplyUVMaps();
-        }//Start()_end
+        }
 
         /// <summary>
         /// Get image frames count.
@@ -69,7 +69,7 @@ namespace Developer.Animation
         protected override int GetFramesCount()
         {
             return column * row;
-        }//GetF...()_end
+        }
 
         /// <summary>
         /// Set current frame to renderer.
@@ -79,7 +79,7 @@ namespace Developer.Animation
         {
             mRenderer.material.mainTextureOffset = new Vector2(frameIndex % column * frameWidth,
                 frameIndex / column * frameHeight);
-        }//SetFrame()_end
+        }
 
         /// <summary>
         /// Apply main textute uv maps.
@@ -90,7 +90,7 @@ namespace Developer.Animation
             frameHeight = 1.0f / row;
             mRenderer.material.mainTextureOffset = Vector2.zero;
             mRenderer.material.mainTextureScale = new Vector2(frameWidth, frameHeight);
-        }//ApplyU...()_end
+        }
         #endregion
 
         #region Public Method
@@ -106,7 +106,7 @@ namespace Developer.Animation
             this.column = column;
             mRenderer.material.mainTexture = frames;
             ApplyUVMaps();
-        }//SetFrame()_end
+        }
 
 #if UNITY_EDITOR
         /// <summary>
@@ -118,8 +118,8 @@ namespace Developer.Animation
                 mRenderer = GetComponent<Renderer>();
             mRenderer.sharedMaterial.mainTextureOffset = Vector2.zero;
             mRenderer.sharedMaterial.mainTextureScale = new Vector2(1.0f / column, 1.0f / row);
-        }//ApplyU...()_end
+        }
 #endif
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

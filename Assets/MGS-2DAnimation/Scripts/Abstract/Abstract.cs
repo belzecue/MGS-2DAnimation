@@ -33,7 +33,7 @@ namespace Developer.Animation
         public void Play()
         {
             enabled = true;
-        }//Play()_end
+        }
 
         /// <summary>
         /// Pause animation.
@@ -41,7 +41,7 @@ namespace Developer.Animation
         public void Pause()
         {
             enabled = false;
-        }//Pause()_end
+        }
 
         /// <summary>
         /// Stop animation.
@@ -50,14 +50,14 @@ namespace Developer.Animation
         {
             Pause();
             Rewind();
-        }//Stop()_end
+        }
 
         /// <summary>
         /// Rewind animation.
         /// </summary>
         public abstract void Rewind();
         #endregion
-    }//class_end
+    }
 
     public abstract class FramesAnimation : DAnimation
     {
@@ -88,7 +88,7 @@ namespace Developer.Animation
         {
             if (speed < 0)
                 index = GetFramesCount();
-        }//Start()_end
+        }
 
         protected virtual void Update()
         {
@@ -107,7 +107,7 @@ namespace Developer.Animation
             }
             else
                 SetFrame((int)index);
-        }//Update()_end
+        }
 
         /// <summary>
         /// Get image frames count.
@@ -130,7 +130,7 @@ namespace Developer.Animation
         {
             index = 0;
             SetFrame(0);
-        }//Rewind()_end
+        }
 
         /// <summary>
         /// Rewind animation.
@@ -141,7 +141,7 @@ namespace Developer.Animation
             frameIndex = Mathf.Clamp(frameIndex, 0, GetFramesCount() - 1);
             index = frameIndex;
             SetFrame(frameIndex);
-        }//Rewind()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

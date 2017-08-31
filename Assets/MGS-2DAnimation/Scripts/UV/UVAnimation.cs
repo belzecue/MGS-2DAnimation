@@ -41,12 +41,12 @@ namespace Developer.Animation
         protected virtual void Start()
         {
             mRenderer = GetComponent<Renderer>();
-        }//Start()_end
+        }
 
         protected virtual void Update()
         {
             mRenderer.material.mainTextureOffset += speed * Time.deltaTime;
-        }//Update()_end
+        }
         #endregion
 
         #region Public Method
@@ -56,7 +56,7 @@ namespace Developer.Animation
         public override void Rewind()
         {
             Rewind(Vector2.zero);
-        }//Rewind()_end
+        }
 
         /// <summary>
         /// Rewind animation.
@@ -65,7 +65,7 @@ namespace Developer.Animation
         public void Rewind(Vector2 uvMapOffset)
         {
             mRenderer.material.mainTextureOffset = uvMapOffset;
-        }//Rewind()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}

@@ -43,7 +43,7 @@ namespace Developer.Animation
         {
             base.Start();
             image = GetComponent<Image>();
-        }//Start()_end
+        }
 
         /// <summary>
         /// Get image frames count.
@@ -52,7 +52,7 @@ namespace Developer.Animation
         protected override int GetFramesCount()
         {
             return frames.Length;
-        }//GetF...()_end
+        }
 
         /// <summary>
         /// Set current frame to renderer.
@@ -61,7 +61,7 @@ namespace Developer.Animation
         protected override void SetFrame(int frameIndex)
         {
             image.sprite = frames[frameIndex];
-        }//SetFrame()_end
+        }
         #endregion
-    }//class_end
-}//namespace_end
+    }
+}
