@@ -1,7 +1,7 @@
 /*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson tech. Co., Ltd.
+ *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
  *  FileName: UVFramesAnimationEditor.cs
- *  Author: Mogoson   Version: 1.0   Date: 6/2/2017
+ *  Author: Mogoson   Version: 0.1.0   Date: 6/2/2017
  *  Version Description:
  *    Internal develop version,mainly to achieve its function.
  *  File Description:
@@ -14,14 +14,14 @@
  *     1.
  *  History:
  *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     6/2/2017       1.0        Build this file.
+ *     1.     Mogoson     6/2/2017        0.1.0       Create this file.
  *************************************************************************/
 
-namespace Developer.Animation
-{
-    using UnityEditor;
-    using UnityEngine;
+using UnityEditor;
+using UnityEngine;
 
+namespace Developer.TwoDAnimation
+{
     [CustomEditor(typeof(UVFramesAnimation), true)]
     [CanEditMultipleObjects]
     public class UVFramesAnimationEditor : Editor
@@ -35,9 +35,7 @@ namespace Developer.Animation
         {
             DrawDefaultInspector();
             if (GUILayout.Button("Apply UV Maps"))
-            {
                 script.ApplyUVMapsInEditor();
-            }
         }
         #endregion
     }

@@ -1,28 +1,28 @@
 /*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson tech. Co., Ltd.
+ *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
  *  FileName: UVFramesAnimation.cs
- *  Author: Mogoson   Version: 1.0   Date: 6/2/2017
+ *  Author: Mogoson   Version: 0.1.0   Date: 6/2/2017
  *  Version Description:
  *    Internal develop version,mainly to achieve its function.
  *  File Description:
  *    Ignore.
  *  Class List:
  *    <ID>           <name>             <description>
- *     1.         UVFramesAnimation             Ignore.
+ *     1.       UVFramesAnimation          Ignore.
  *  Function List:
  *    <class ID>     <name>             <description>
  *     1.
  *  History:
  *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     6/2/2017       1.0        Build this file.
+ *     1.     Mogoson     6/2/2017       0.1.0        Create this file.
  *************************************************************************/
 
-namespace Developer.Animation
-{
-    using UnityEngine;
+using UnityEngine;
 
+namespace Developer.TwoDAnimation
+{
     [RequireComponent(typeof(Renderer))]
-    [AddComponentMenu("Developer/Animation/UVFramesAnimation")]
+    [AddComponentMenu("Developer/TwoDAnimation/UVFramesAnimation")]
     public class UVFramesAnimation : FramesAnimation
     {
         #region Property and Field
@@ -110,7 +110,7 @@ namespace Developer.Animation
 
 #if UNITY_EDITOR
         /// <summary>
-        /// Apply main textute uv maps [Only call this method in editor script].
+        /// Apply main textute uv maps (Only call this method in editor script).
         /// </summary>
         public void ApplyUVMapsInEditor()
         {
