@@ -1,20 +1,13 @@
 /*************************************************************************
  *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
- *  FileName: UVFramesAnimation.cs
- *  Author: Mogoson   Version: 0.1.0   Date: 6/2/2017
- *  Version Description:
- *    Internal develop version,mainly to achieve its function.
- *  File Description:
- *    Ignore.
- *  Class List:
- *    <ID>           <name>             <description>
- *     1.       UVFramesAnimation          Ignore.
- *  Function List:
- *    <class ID>     <name>             <description>
- *     1.
- *  History:
- *    <ID>    <author>      <time>      <version>      <description>
- *     1.     Mogoson     6/2/2017       0.1.0        Create this file.
+ *------------------------------------------------------------------------
+ *  File         :  UVFramesAnimation.cs
+ *  Description  :  Define sequence frames animation base on UV offset.
+ *------------------------------------------------------------------------
+ *  Author       :  Mogoson
+ *  Version      :  0.1.0
+ *  Date         :  6/2/2017
+ *  Description  :  Initial development version.
  *************************************************************************/
 
 using UnityEngine;
@@ -54,7 +47,7 @@ namespace Developer.TwoDAnimation
         protected Renderer mRenderer;
         #endregion
 
-        #region Private Method
+        #region Protected Method
         protected override void Start()
         {
             base.Start();
@@ -77,8 +70,7 @@ namespace Developer.TwoDAnimation
         /// <param name="frameIndex">Index of frame.</param>
         protected override void SetFrame(int frameIndex)
         {
-            mRenderer.material.mainTextureOffset = new Vector2(frameIndex % column * frameWidth,
-                frameIndex / column * frameHeight);
+            mRenderer.material.mainTextureOffset = new Vector2(frameIndex % column * frameWidth, frameIndex / column * frameHeight);
         }
 
         /// <summary>
