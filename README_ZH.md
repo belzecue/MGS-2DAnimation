@@ -1,4 +1,4 @@
-# MGS-2DAnimation
+﻿# MGS-2DAnimation
 - [English Manual](./README.md)
 
 ## 概述
@@ -21,11 +21,11 @@
 ## 图示
 - RendererFrames
 
-![RendererFrames](./Attachments/RendererFrames.png)
+![RendererFrames](./Attachments/RendererFrames.gif)
 
 - UVAnimation
 
-![UVAnimation](./Attachments/UVAnimation.png)
+![UVAnimation](./Attachments/UVAnimation.gif)
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。
