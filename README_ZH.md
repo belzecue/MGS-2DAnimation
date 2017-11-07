@@ -18,14 +18,14 @@
 ## 案例
 - “MGS-2DAnimation\Scenes”目录下存有上述功能的演示案例，供读者参考。
 
-## 图示
+## 预览
 - RendererFrames
 
-![RendererFrames](./Attachments/RendererFrames.gif)
+![RendererFrames](./Attachments/README_Image/RendererFrames.gif)
 
 - UVAnimation
 
-![UVAnimation](./Attachments/UVAnimation.gif)
+![UVAnimation](./Attachments/README_Image/UVAnimation.gif)
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。

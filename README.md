@@ -21,11 +21,11 @@
 ## Preview
 - RendererFrames
 
-![RendererFrames](./Attachments/RendererFrames.gif)
+![RendererFrames](./Attachments/README_Image/RendererFrames.gif)
 
 - UVAnimation
 
-![UVAnimation](./Attachments/UVAnimation.gif)
+![UVAnimation](./Attachments/README_Image/UVAnimation.gif)
 
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@qq.com.
