@@ -15,8 +15,8 @@ using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
-    [RequireComponent(typeof(SpriteRenderer))]
     [AddComponentMenu("Developer/TwoDAnimation/SRFramesAnimation")]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class SRFramesAnimation : FramesAnimation
     {
         #region Property and Field

@@ -14,8 +14,8 @@ using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
-    [RequireComponent(typeof(Renderer))]
     [AddComponentMenu("Developer/TwoDAnimation/UVAnimation")]
+    [RequireComponent(typeof(Renderer))]
     public class UVAnimation : TwoDAnimation
     {
         #region Property and Field

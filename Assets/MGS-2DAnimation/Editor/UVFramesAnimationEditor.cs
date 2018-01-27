@@ -20,15 +20,16 @@ namespace Developer.TwoDAnimation
     public class UVFramesAnimationEditor : Editor
     {
         #region Property and Field
-        protected UVFramesAnimation script { get { return target as UVFramesAnimation; } }
+        protected UVFramesAnimation Script { get { return target as UVFramesAnimation; } }
         #endregion
 
         #region Public Method
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
+
             if (GUILayout.Button("Apply UV Maps"))
-                script.ApplyUVMapsInEditor();
+                Script.ApplyUVMapsInEditor();
         }
         #endregion
     }

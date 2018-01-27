@@ -15,8 +15,8 @@ using UnityEngine.UI;
 
 namespace Developer.TwoDAnimation
 {
-    [RequireComponent(typeof(Image))]
     [AddComponentMenu("Developer/TwoDAnimation/UIFramesAnimation")]
+    [RequireComponent(typeof(Image))]
     public class UIFramesAnimation : FramesAnimation
     {
         #region Property and Field

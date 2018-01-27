@@ -14,8 +14,8 @@ using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
-    [RequireComponent(typeof(Renderer))]
     [AddComponentMenu("Developer/TwoDAnimation/UVFramesAnimation")]
+    [RequireComponent(typeof(Renderer))]
     public class UVFramesAnimation : FramesAnimation
     {
         #region Property and Field
@@ -108,6 +108,7 @@ namespace Developer.TwoDAnimation
         {
             if (mRenderer == null)
                 mRenderer = GetComponent<Renderer>();
+
             mRenderer.sharedMaterial.mainTextureOffset = Vector2.zero;
             mRenderer.sharedMaterial.mainTextureScale = new Vector2(1.0f / column, 1.0f / row);
         }

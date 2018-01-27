@@ -14,8 +14,8 @@ using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
-    [RequireComponent(typeof(Renderer))]
     [AddComponentMenu("Developer/TwoDAnimation/RFramesAnimation")]
+    [RequireComponent(typeof(Renderer))]
     public class RFramesAnimation : FramesAnimation
     {
         #region Property and Field

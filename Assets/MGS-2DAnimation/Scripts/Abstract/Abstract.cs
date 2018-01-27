@@ -15,6 +15,9 @@ using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
+    /// <summary>
+    /// Event of animation.
+    /// </summary>
     public delegate void AnimationEvent();
 
     public abstract class TwoDAnimation : MonoBehaviour
@@ -23,7 +26,7 @@ namespace Developer.TwoDAnimation
         /// <summary>
         /// Play animation.
         /// </summary>
-        public void Play()
+        public virtual void Play()
         {
             enabled = true;
         }
@@ -31,7 +34,7 @@ namespace Developer.TwoDAnimation
         /// <summary>
         /// Pause animation.
         /// </summary>
-        public void Pause()
+        public virtual void Pause()
         {
             enabled = false;
         }
@@ -39,9 +42,9 @@ namespace Developer.TwoDAnimation
         /// <summary>
         /// Stop animation.
         /// </summary>
-        public void Stop()
+        public virtual void Stop()
         {
-            Pause();
+            enabled = false;
             Rewind();
         }
 
