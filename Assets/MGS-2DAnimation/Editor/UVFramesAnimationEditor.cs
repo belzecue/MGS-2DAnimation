@@ -1,12 +1,12 @@
-/*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
+﻿/*************************************************************************
+ *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  UVFramesAnimationEditor.cs
  *  Description  :  Editor for UVFramesAnimation component.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  6/2/2017
+ *  Date         :  3/8/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -19,8 +19,8 @@ namespace Developer.TwoDAnimation
     [CanEditMultipleObjects]
     public class UVFramesAnimationEditor : Editor
     {
-        #region Property and Field
-        protected UVFramesAnimation Script { get { return target as UVFramesAnimation; } }
+        #region Field and Property
+        protected UVFramesAnimation Target { get { return target as UVFramesAnimation; } }
         #endregion
 
         #region Public Method
@@ -29,7 +29,7 @@ namespace Developer.TwoDAnimation
             DrawDefaultInspector();
 
             if (GUILayout.Button("Apply UV Maps"))
-                Script.ApplyUVMapsInEditor();
+                Target.ApplyUVMapsInEditor();
         }
         #endregion
     }

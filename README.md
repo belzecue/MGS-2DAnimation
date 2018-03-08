@@ -9,11 +9,11 @@
 - .Net Framework 3.0 or above.
 
 ## Achieve
-- RFramesAnimation：Frames animation display base on Mesh Renderer.
-- SRFramesAnimation：Frames animation display base on Sprite Renderer.
-- UIFramesAnimation：Frames animation display base on UI component(Image).
-- UVFramesAnimation：Frames(an image) animation display base on Mesh Renderer.
-- UVAnimation：UV offset animation display base on Mesh Renderer.
+- RFramesAnimation ：Frames animation display base on Mesh Renderer.
+- SRFramesAnimation ：Frames animation display base on Sprite Renderer.
+- UIFramesAnimation ：Frames animation display base on UI component(Image).
+- UVFramesAnimation ：Frames(an image) animation display base on Mesh Renderer.
+- UVAnimation ：UV offset animation display base on Mesh Renderer.
 
 ## Demo
 - Demos in the path "MGS-2DAnimation\Scenes" provide reference to you.

@@ -1,12 +1,12 @@
-/*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
+﻿/*************************************************************************
+ *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  UVAnimation.cs
  *  Description  :  Define UV offset animation.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  6/1/2017
+ *  Date         :  3/8/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -18,7 +18,7 @@ namespace Developer.TwoDAnimation
     [RequireComponent(typeof(Renderer))]
     public class UVAnimation : TwoDAnimation
     {
-        #region Property and Field
+        #region Field and Property
         /// <summary>
         /// Speed of move uv map.
         /// </summary>

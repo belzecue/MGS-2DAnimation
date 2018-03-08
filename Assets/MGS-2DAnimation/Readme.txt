@@ -1,7 +1,7 @@
-==========================================================================
-  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
+ï»¿==========================================================================
+  Copyright Â© 2017-2018 Mogoson. All rights reserved.
   Name: MGS-2DAnimation
-  Author: Mogoson   Version: 0.1.0   Date: 6/7/2017
+  Author: Mogoson   Version: 0.1.0   Date: 3/8/2018
 ==========================================================================
   [Summary]
     Unity plugin for make 2D animation in scene.
@@ -11,19 +11,19 @@
     .Net Framework 3.0 or above.
 --------------------------------------------------------------------------
   [Achieve]
-    RFramesAnimation£ºFrames(multi images) animation display base on Mesh
+    RFramesAnimation : Frames(multi images) animation display base on Mesh
     Renderer.
 
-    SRFramesAnimation£ºFrames(multi images) animation display base on
+    SRFramesAnimation ï¼šFrames(multi images) animation display base on
     Sprite Renderer.
 
-    UIFramesAnimation£ºFrames(multi images) animation display base on UI
+    UIFramesAnimation ï¼šFrames(multi images) animation display base on UI
     component(Image).
 
-    UVFramesAnimation£ºFrames(an frames image) animation display base on
+    UVFramesAnimation ï¼šFrames(an frames image) animation display base on
     Mesh Renderer.
 
-    UVAnimation£º(an frames image)UV offset animation display base on
+    UVAnimation ï¼š(an frames image)UV offset animation display base on
     Mesh Renderer.
 --------------------------------------------------------------------------
   [Usage]

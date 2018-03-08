@@ -1,12 +1,12 @@
-/*************************************************************************
- *  Copyright (C), 2017-2018, Mogoson Tech. Co., Ltd.
+﻿/*************************************************************************
+ *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  UIFramesAnimation.cs
  *  Description  :  Define sequence frames animation base on UI(Image).
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  6/2/2017
+ *  Date         :  3/8/2018
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -19,7 +19,7 @@ namespace Developer.TwoDAnimation
     [RequireComponent(typeof(Image))]
     public class UIFramesAnimation : FramesAnimation
     {
-        #region Property and Field
+        #region Field and Property
         /// <summary>
         /// Frames sprite of animation.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Developer.TwoDAnimation
         /// <summary>
         /// Get image frames count.
         /// </summary>
-        /// <returns>Frames count</returns>
+        /// <returns>Frames count.</returns>
         protected override int GetFramesCount()
         {
             return frames.Length;
