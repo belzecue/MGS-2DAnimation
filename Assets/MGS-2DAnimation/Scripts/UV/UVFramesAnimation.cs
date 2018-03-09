@@ -32,6 +32,11 @@ namespace Developer.TwoDAnimation
         protected int column = 5;
 
         /// <summary>
+        /// Count of image frames.
+        /// </summary>
+        protected int framesCount;
+
+        /// <summary>
         /// Width of a frame.
         /// </summary>
         protected float frameWidth;
@@ -52,6 +57,7 @@ namespace Developer.TwoDAnimation
         {
             base.Start();
             mRenderer = GetComponent<Renderer>();
+            framesCount = row * column;
             ApplyUVMaps();
         }
 
@@ -61,7 +67,7 @@ namespace Developer.TwoDAnimation
         /// <returns>Frames count</returns>
         protected override int GetFramesCount()
         {
-            return column * row;
+            return framesCount;
         }
 
         /// <summary>
@@ -96,6 +102,7 @@ namespace Developer.TwoDAnimation
         {
             this.row = row;
             this.column = column;
+            framesCount = row * column;
             mRenderer.material.mainTexture = frames;
             ApplyUVMaps();
         }
@@ -109,8 +116,7 @@ namespace Developer.TwoDAnimation
             if (mRenderer == null)
                 mRenderer = GetComponent<Renderer>();
 
-            mRenderer.sharedMaterial.mainTextureOffset = Vector2.zero;
-            mRenderer.sharedMaterial.mainTextureScale = new Vector2(1.0f / column, 1.0f / row);
+            ApplyUVMaps();
         }
 #endif
         #endregion

@@ -2,8 +2,7 @@
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  TwoDAnimation.cs
- *  Description  :  Define AnimationEvent, TwoDAnimation and
- *                  FramesAnimation.
+ *  Description  :  Define TwoDAnimation and FramesAnimation.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -11,15 +10,11 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using System;
 using UnityEngine;
 
 namespace Developer.TwoDAnimation
 {
-    /// <summary>
-    /// Event of animation.
-    /// </summary>
-    public delegate void AnimationEvent();
-
     /// <summary>
     /// Two dimensional animation.
     /// </summary>
@@ -77,7 +72,7 @@ namespace Developer.TwoDAnimation
         /// <summary>
         /// Event of animation play on last frame.
         /// </summary>
-        public AnimationEvent onLastFrame;
+        public event Action OnLastFrame;
 
         /// <summary>
         /// Index of current frame.
@@ -95,18 +90,18 @@ namespace Developer.TwoDAnimation
         protected virtual void Update()
         {
             index += speed * Time.deltaTime;
-            if (index >= GetFramesCount() || index < 0)
+            if (index < 0 || index >= GetFramesCount())
             {
                 if (loop)
-                    index -= index / Mathf.Abs(index) * GetFramesCount();
+                    index -= (index < 0 ? -1 : 1) * GetFramesCount();
                 else
                 {
-                    index = Mathf.Clamp(index, 0, GetFramesCount() - 1);
                     enabled = false;
+                    index = Mathf.Clamp(index, 0, GetFramesCount() - 1);
                 }
 
-                if (onLastFrame != null)
-                    onLastFrame.Invoke();
+                if (OnLastFrame != null)
+                    OnLastFrame.Invoke();
             }
             else
                 SetFrame((int)index);
