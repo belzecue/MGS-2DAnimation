@@ -32,9 +32,8 @@ namespace Developer.TwoDAnimation
         #endregion
 
         #region Protected Method
-        protected override void Start()
+        protected virtual void Start()
         {
-            base.Start();
             sRenderer = GetComponent<SpriteRenderer>();
         }
 

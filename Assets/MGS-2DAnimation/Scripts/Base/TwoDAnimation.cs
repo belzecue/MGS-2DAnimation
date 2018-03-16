@@ -81,23 +81,17 @@ namespace Developer.TwoDAnimation
         #endregion
 
         #region Protected Method
-        protected virtual void Start()
-        {
-            if (speed < 0)
-                index = GetFramesCount();
-        }
-
         protected virtual void Update()
         {
             index += speed * Time.deltaTime;
             if (index < 0 || index >= GetFramesCount())
             {
                 if (loop)
-                    index -= (index < 0 ? -1 : 1) * GetFramesCount();
+                    index -= GetFramesCount() * (index > 0 ? 1 : -1);
                 else
                 {
                     enabled = false;
-                    index = Mathf.Clamp(index, 0, GetFramesCount() - 1);
+                    index = 0;
                 }
 
                 if (OnLastFrame != null)
