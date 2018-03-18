@@ -87,7 +87,7 @@ namespace Developer.TwoDAnimation
             if (index < 0 || index >= GetFramesCount())
             {
                 if (loop)
-                    index -= GetFramesCount() * (index > 0 ? 1 : -1);
+                    index -= GetFramesCount() * (index < 0 ? -1 : 1);
                 else
                 {
                     enabled = false;
