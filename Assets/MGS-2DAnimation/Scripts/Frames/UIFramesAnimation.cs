@@ -13,9 +13,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Developer.TwoDAnimation
+namespace Mogoson.TwoDAnimation
 {
-    [AddComponentMenu("Developer/TwoDAnimation/UIFramesAnimation")]
+    /// <summary>
+    /// Sequence frames animation base on UI(Image).
+    /// </summary>
+    [AddComponentMenu("Mogoson/TwoDAnimation/UIFramesAnimation")]
     [RequireComponent(typeof(Image))]
     public class UIFramesAnimation : FramesAnimation
     {

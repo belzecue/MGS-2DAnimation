@@ -12,9 +12,12 @@
 
 using UnityEngine;
 
-namespace Developer.TwoDAnimation
+namespace Mogoson.TwoDAnimation
 {
-    [AddComponentMenu("Developer/TwoDAnimation/RFramesAnimation")]
+    /// <summary>
+    /// Sequence frames animation base on Renderer.
+    /// </summary>
+    [AddComponentMenu("Mogoson/TwoDAnimation/RFramesAnimation")]
     [RequireComponent(typeof(Renderer))]
     public class RFramesAnimation : FramesAnimation
     {

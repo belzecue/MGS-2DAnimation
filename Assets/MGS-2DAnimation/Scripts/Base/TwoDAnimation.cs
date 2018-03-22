@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-namespace Developer.TwoDAnimation
+namespace Mogoson.TwoDAnimation
 {
     /// <summary>
     /// Two dimensional animation.
