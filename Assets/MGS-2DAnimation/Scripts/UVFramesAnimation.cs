@@ -12,12 +12,12 @@
 
 using UnityEngine;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
     /// Sequence frames animation base on UV offset.
     /// </summary>
-    [AddComponentMenu("Mogoson/TwoDAnimation/UVFramesAnimation")]
+    [AddComponentMenu("Mogoson/AnimationExtension/UVFramesAnimation")]
     [RequireComponent(typeof(Renderer))]
     public class UVFramesAnimation : FramesAnimation
     {

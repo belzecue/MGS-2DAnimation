@@ -1,9 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  SRFramesAnimation.cs
- *  Description  :  Define sequence frames animation base on
- *                  SpriteRenderer.
+ *  File         :  UIFramesAnimation.cs
+ *  Description  :  Define sequence frames animation base on UI(Image).
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -12,15 +11,16 @@
  *************************************************************************/
 
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
-    /// Sequence frames animation base on SpriteRenderer.
+    /// Sequence frames animation base on UI(Image).
     /// </summary>
-    [AddComponentMenu("Mogoson/TwoDAnimation/SRFramesAnimation")]
-    [RequireComponent(typeof(SpriteRenderer))]
-    public class SRFramesAnimation : FramesAnimation
+    [AddComponentMenu("Mogoson/AnimationExtension/UIFramesAnimation")]
+    [RequireComponent(typeof(Image))]
+    public class UIFramesAnimation : FramesAnimation
     {
         #region Field and Property
         /// <summary>
@@ -29,15 +29,15 @@ namespace Mogoson.TwoDAnimation
         public Sprite[] frames;
 
         /// <summary>
-        /// SpriteRenderer of animation.
+        /// Renderer of animation.
         /// </summary>
-        protected SpriteRenderer sRenderer;
+        protected Image image;
         #endregion
 
         #region Protected Method
         protected virtual void Start()
         {
-            sRenderer = GetComponent<SpriteRenderer>();
+            image = GetComponent<Image>();
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Mogoson.TwoDAnimation
         /// <param name="frameIndex">Index of frame.</param>
         protected override void SetFrame(int frameIndex)
         {
-            sRenderer.sprite = frames[frameIndex];
+            image.sprite = frames[frameIndex];
         }
         #endregion
     }

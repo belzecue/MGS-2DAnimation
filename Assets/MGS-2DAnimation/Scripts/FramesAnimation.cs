@@ -1,8 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  TwoDAnimation.cs
- *  Description  :  Define TwoDAnimation and FramesAnimation.
+ *  File         :  FramesAnimation.cs
+ *  Description  :  Define FramesAnimation.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -13,62 +13,14 @@
 using System;
 using UnityEngine;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
-    /// Two dimensional animation.
+    /// Animation base on key frames.
     /// </summary>
-    public abstract class TwoDAnimation : MonoBehaviour
-    {
-        #region Public Method
-        /// <summary>
-        /// Play animation.
-        /// </summary>
-        public virtual void Play()
-        {
-            enabled = true;
-        }
-
-        /// <summary>
-        /// Pause animation.
-        /// </summary>
-        public virtual void Pause()
-        {
-            enabled = false;
-        }
-
-        /// <summary>
-        /// Stop animation.
-        /// </summary>
-        public virtual void Stop()
-        {
-            enabled = false;
-            Rewind();
-        }
-
-        /// <summary>
-        /// Rewind animation.
-        /// </summary>
-        public abstract void Rewind();
-        #endregion
-    }
-
-    /// <summary>
-    /// Two dimensional animation base on key frames.
-    /// </summary>
-    public abstract class FramesAnimation : TwoDAnimation
+    public abstract class FramesAnimation : MonoAnimation
     {
         #region Field and Property
-        /// <summary>
-        /// Loop animation.
-        /// </summary>
-        public bool loop = true;
-
-        /// <summary>
-        /// Speed of animation.
-        /// </summary>
-        public float speed = 10;
-
         /// <summary>
         /// Event of animation play on last frame.
         /// </summary>
@@ -86,12 +38,21 @@ namespace Mogoson.TwoDAnimation
             index += speed * Time.deltaTime;
             if (index < 0 || index >= GetFramesCount())
             {
-                if (loop)
-                    index -= GetFramesCount() * (index < 0 ? -1 : 1);
-                else
+                switch (loop)
                 {
-                    enabled = false;
-                    index = 0;
+                    case LoopMode.Once:
+                        enabled = false;
+                        index = 0;
+                        break;
+
+                    case LoopMode.Loop:
+                        index -= GetFramesCount() * (index < 0 ? -1 : 1);
+                        break;
+
+                    case LoopMode.PingPong:
+                        speed = -speed;
+                        index = Mathf.Clamp(index, 1, GetFramesCount() - 1);
+                        break;
                 }
 
                 if (OnLastFrame != null)
@@ -128,7 +89,7 @@ namespace Mogoson.TwoDAnimation
         /// Rewind animation.
         /// </summary>
         /// <param name="frameIndex">Index of rewind frame.</param>
-        public void Rewind(int frameIndex)
+        public virtual void Rewind(int frameIndex)
         {
             index = Mathf.Clamp(frameIndex, 0, GetFramesCount() - 1);
             SetFrame((int)index);

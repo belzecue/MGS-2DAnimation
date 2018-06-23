@@ -1,8 +1,8 @@
 ﻿/*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  UIFramesAnimation.cs
- *  Description  :  Define sequence frames animation base on UI(Image).
+ *  File         :  RFramesAnimation.cs
+ *  Description  :  Define sequence frames animation base on Renderer.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -11,33 +11,32 @@
  *************************************************************************/
 
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
-    /// Sequence frames animation base on UI(Image).
+    /// Sequence frames animation base on Renderer.
     /// </summary>
-    [AddComponentMenu("Mogoson/TwoDAnimation/UIFramesAnimation")]
-    [RequireComponent(typeof(Image))]
-    public class UIFramesAnimation : FramesAnimation
+    [AddComponentMenu("Mogoson/AnimationExtension/RFramesAnimation")]
+    [RequireComponent(typeof(Renderer))]
+    public class RFramesAnimation : FramesAnimation
     {
         #region Field and Property
         /// <summary>
-        /// Frames sprite of animation.
+        /// Frames texture of animation.
         /// </summary>
-        public Sprite[] frames;
+        public Texture[] frames;
 
         /// <summary>
         /// Renderer of animation.
         /// </summary>
-        protected Image image;
+        protected Renderer mRenderer;
         #endregion
 
         #region Protected Method
         protected virtual void Start()
         {
-            image = GetComponent<Image>();
+            mRenderer = GetComponent<Renderer>();
         }
 
         /// <summary>
@@ -55,7 +54,7 @@ namespace Mogoson.TwoDAnimation
         /// <param name="frameIndex">Index of frame.</param>
         protected override void SetFrame(int frameIndex)
         {
-            image.sprite = frames[frameIndex];
+            mRenderer.material.mainTexture = frames[frameIndex];
         }
         #endregion
     }

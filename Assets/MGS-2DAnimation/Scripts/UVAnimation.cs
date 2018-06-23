@@ -12,20 +12,20 @@
 
 using UnityEngine;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
     /// Animation base on UV offset.
     /// </summary>
-    [AddComponentMenu("Mogoson/TwoDAnimation/UVAnimation")]
+    [AddComponentMenu("Mogoson/AnimationExtension/UVAnimation")]
     [RequireComponent(typeof(Renderer))]
-    public class UVAnimation : TwoDAnimation
+    public class UVAnimation : MonoAnimation
     {
         #region Field and Property
         /// <summary>
-        /// Speed of move uv map.
+        /// Speed coefficient of move uv map.
         /// </summary>
-        public Vector2 speed = Vector2.one;
+        public Vector2 coefficient = Vector2.one;
 
         /// <summary>
         /// Renderer of animation.
@@ -41,7 +41,7 @@ namespace Mogoson.TwoDAnimation
 
         protected virtual void Update()
         {
-            mRenderer.material.mainTextureOffset += speed * Time.deltaTime;
+            mRenderer.material.mainTextureOffset += speed * coefficient * Time.deltaTime;
         }
         #endregion
 

@@ -1,8 +1,9 @@
 ﻿/*************************************************************************
  *  Copyright © 2017-2018 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  RFramesAnimation.cs
- *  Description  :  Define sequence frames animation base on Renderer.
+ *  File         :  SRFramesAnimation.cs
+ *  Description  :  Define sequence frames animation base on
+ *                  SpriteRenderer.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
@@ -12,31 +13,31 @@
 
 using UnityEngine;
 
-namespace Mogoson.TwoDAnimation
+namespace Mogoson.AnimationExtension
 {
     /// <summary>
-    /// Sequence frames animation base on Renderer.
+    /// Sequence frames animation base on SpriteRenderer.
     /// </summary>
-    [AddComponentMenu("Mogoson/TwoDAnimation/RFramesAnimation")]
-    [RequireComponent(typeof(Renderer))]
-    public class RFramesAnimation : FramesAnimation
+    [AddComponentMenu("Mogoson/AnimationExtension/SRFramesAnimation")]
+    [RequireComponent(typeof(SpriteRenderer))]
+    public class SRFramesAnimation : FramesAnimation
     {
         #region Field and Property
         /// <summary>
-        /// Frames texture of animation.
+        /// Frames sprite of animation.
         /// </summary>
-        public Texture[] frames;
+        public Sprite[] frames;
 
         /// <summary>
-        /// Renderer of animation.
+        /// SpriteRenderer of animation.
         /// </summary>
-        protected Renderer mRenderer;
+        protected SpriteRenderer sRenderer;
         #endregion
 
         #region Protected Method
         protected virtual void Start()
         {
-            mRenderer = GetComponent<Renderer>();
+            sRenderer = GetComponent<SpriteRenderer>();
         }
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Mogoson.TwoDAnimation
         /// <param name="frameIndex">Index of frame.</param>
         protected override void SetFrame(int frameIndex)
         {
-            mRenderer.material.mainTexture = frames[frameIndex];
+            sRenderer.sprite = frames[frameIndex];
         }
         #endregion
     }
