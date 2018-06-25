@@ -1,7 +1,7 @@
 ﻿==========================================================================
   Copyright © 2017-2018 Mogoson. All rights reserved.
   Name: MGS-2DAnimation
-  Author: Mogoson   Version: 0.1.0   Date: 3/8/2018
+  Author: Mogoson   Version: 0.1.1   Date: 6/25/2018
 ==========================================================================
   [Summary]
     Unity plugin for make 2D animation in scene.
