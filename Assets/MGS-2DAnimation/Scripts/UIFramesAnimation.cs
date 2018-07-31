@@ -13,7 +13,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Mogoson.AnimationExtension
+namespace Mogoson.UAnimation
 {
     /// <summary>
     /// Sequence frames animation base on UI(Image).

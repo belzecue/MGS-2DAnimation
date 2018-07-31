@@ -12,7 +12,7 @@
 
 using UnityEngine;
 
-namespace Mogoson.AnimationExtension
+namespace Mogoson.UAnimation
 {
     /// <summary>
     /// Sequence frames animation base on UV offset.

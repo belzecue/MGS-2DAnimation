@@ -13,7 +13,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Mogoson.AnimationExtension
+namespace Mogoson.UAnimation
 {
     [CustomEditor(typeof(UVFramesAnimation), true)]
     [CanEditMultipleObjects]

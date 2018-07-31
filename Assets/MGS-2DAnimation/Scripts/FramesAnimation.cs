@@ -13,7 +13,7 @@
 using System;
 using UnityEngine;
 
-namespace Mogoson.AnimationExtension
+namespace Mogoson.UAnimation
 {
     /// <summary>
     /// Animation base on key frames.
