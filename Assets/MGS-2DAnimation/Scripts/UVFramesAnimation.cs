@@ -12,12 +12,12 @@
 
 using UnityEngine;
 
-namespace Mogoson.UAnimation
+namespace Mogoson.TwoDAnimation
 {
     /// <summary>
     /// Sequence frames animation base on UV offset.
     /// </summary>
-    [AddComponentMenu("Mogoson/AnimationExtension/UVFramesAnimation")]
+    [AddComponentMenu("Mogoson/TwoDAnimation/UVFramesAnimation")]
     [RequireComponent(typeof(Renderer))]
     public class UVFramesAnimation : FramesAnimation
     {
@@ -80,17 +80,6 @@ namespace Mogoson.UAnimation
         {
             mRenderer.material.mainTextureOffset = new Vector2(frameIndex % column * frameWidth, frameIndex / column * frameHeight);
         }
-
-        /// <summary>
-        /// Apply main textute uv maps.
-        /// </summary>
-        protected void ApplyUVMaps()
-        {
-            frameWidth = 1.0f / column;
-            frameHeight = 1.0f / row;
-            mRenderer.material.mainTextureOffset = Vector2.zero;
-            mRenderer.material.mainTextureScale = new Vector2(frameWidth, frameHeight);
-        }
         #endregion
 
         #region Public Method
@@ -109,18 +98,20 @@ namespace Mogoson.UAnimation
             ApplyUVMaps();
         }
 
-#if UNITY_EDITOR
         /// <summary>
-        /// Apply main textute uv maps (Only call this method in editor script).
+        /// Apply main textute uv maps.
         /// </summary>
-        public void ApplyUVMapsInEditor()
+        public void ApplyUVMaps()
         {
+#if UNITY_EDITOR
             if (mRenderer == null)
                 mRenderer = GetComponent<Renderer>();
-
-            ApplyUVMaps();
-        }
 #endif
+            frameWidth = 1.0f / column;
+            frameHeight = 1.0f / row;
+            mRenderer.material.mainTextureOffset = Vector2.zero;
+            mRenderer.material.mainTextureScale = new Vector2(frameWidth, frameHeight);
+        }
         #endregion
     }
 }

@@ -10,14 +10,15 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using Mogoson.UAnimation;
 using UnityEngine;
 
-namespace Mogoson.UAnimation
+namespace Mogoson.TwoDAnimation
 {
     /// <summary>
     /// Animation base on UV offset.
     /// </summary>
-    [AddComponentMenu("Mogoson/AnimationExtension/UVAnimation")]
+    [AddComponentMenu("Mogoson/TwoDAnimation/UVAnimation")]
     [RequireComponent(typeof(Renderer))]
     public class UVAnimation : MonoAnimation
     {

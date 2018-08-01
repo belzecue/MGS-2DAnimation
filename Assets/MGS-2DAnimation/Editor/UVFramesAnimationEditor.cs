@@ -13,7 +13,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Mogoson.UAnimation
+namespace Mogoson.TwoDAnimation
 {
     [CustomEditor(typeof(UVFramesAnimation), true)]
     [CanEditMultipleObjects]
@@ -29,7 +29,7 @@ namespace Mogoson.UAnimation
             DrawDefaultInspector();
 
             if (GUILayout.Button("Apply UV Maps"))
-                Target.ApplyUVMapsInEditor();
+                Target.ApplyUVMaps();
         }
         #endregion
     }

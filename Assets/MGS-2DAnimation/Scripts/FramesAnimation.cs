@@ -10,10 +10,11 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using Mogoson.UAnimation;
 using System;
 using UnityEngine;
 
-namespace Mogoson.UAnimation
+namespace Mogoson.TwoDAnimation
 {
     /// <summary>
     /// Animation base on key frames.

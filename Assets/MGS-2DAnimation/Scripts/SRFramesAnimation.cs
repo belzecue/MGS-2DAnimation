@@ -13,12 +13,12 @@
 
 using UnityEngine;
 
-namespace Mogoson.UAnimation
+namespace Mogoson.TwoDAnimation
 {
     /// <summary>
     /// Sequence frames animation base on SpriteRenderer.
     /// </summary>
-    [AddComponentMenu("Mogoson/AnimationExtension/SRFramesAnimation")]
+    [AddComponentMenu("Mogoson/TwoDAnimation/SRFramesAnimation")]
     [RequireComponent(typeof(SpriteRenderer))]
     public class SRFramesAnimation : FramesAnimation
     {
