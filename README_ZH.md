@@ -19,13 +19,13 @@
 - “MGS-2DAnimation\Scenes”目录下存有上述功能的演示案例，供读者参考。
 
 ## 预览
-- RendererFrames
+- Renderer Frames
 
-![RendererFrames](./Attachments/README_Image/RendererFrames.gif)
+![Renderer Frames](./Attachments/README_Image/RendererFrames.gif)
 
-- UVAnimation
+- UV Animation
 
-![UVAnimation](./Attachments/README_Image/UVAnimation.gif)
+![UV Animation](./Attachments/README_Image/UVAnimation.gif)
 
 ## 联系
-- 如果你有任何问题或者建议，欢迎通过mogoson@qq.com联系我。
+- 如果你有任何问题或者建议，欢迎通过mogoson@outlook.com联系我。

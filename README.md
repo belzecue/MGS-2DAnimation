@@ -19,13 +19,13 @@
 - Demos in the path "MGS-2DAnimation\Scenes" provide reference to you.
 
 ## Preview
-- RendererFrames
+- Renderer Frames
 
-![RendererFrames](./Attachments/README_Image/RendererFrames.gif)
+![Renderer Frames](./Attachments/README_Image/RendererFrames.gif)
 
-- UVAnimation
+- UV Animation
 
-![UVAnimation](./Attachments/README_Image/UVAnimation.gif)
+![UV Animation](./Attachments/README_Image/UVAnimation.gif)
 
 ## Contact
-- If you have any questions, feel free to contact me at mogoson@qq.com.
+- If you have any questions, feel free to contact me at mogoson@outlook.com.
