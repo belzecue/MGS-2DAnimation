@@ -57,10 +57,14 @@ namespace Mogoson.TwoDAnimation
                 }
 
                 if (OnLastFrame != null)
+                {
                     OnLastFrame.Invoke();
+                }
             }
             else
+            {
                 SetFrame((int)index);
+            }
         }
 
         /// <summary>

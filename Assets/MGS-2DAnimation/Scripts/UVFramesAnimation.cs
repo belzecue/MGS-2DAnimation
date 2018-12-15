@@ -105,7 +105,9 @@ namespace Mogoson.TwoDAnimation
         {
 #if UNITY_EDITOR
             if (mRenderer == null)
+            {
                 mRenderer = GetComponent<Renderer>();
+            }
 #endif
             frameWidth = 1.0f / column;
             frameHeight = 1.0f / row;
