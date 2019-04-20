@@ -20,14 +20,9 @@ namespace Mogoson.TwoDAnimation
     /// </summary>
     [AddComponentMenu("Mogoson/TwoDAnimation/SRFramesAnimation")]
     [RequireComponent(typeof(SpriteRenderer))]
-    public class SRFramesAnimation : FramesAnimation
+    public class SRFramesAnimation : SFramesAnimation
     {
         #region Field and Property
-        /// <summary>
-        /// Frames sprite of animation.
-        /// </summary>
-        public Sprite[] frames;
-
         /// <summary>
         /// SpriteRenderer of animation.
         /// </summary>
@@ -35,20 +30,6 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Protected Method
-        protected virtual void Start()
-        {
-            sRenderer = GetComponent<SpriteRenderer>();
-        }
-
-        /// <summary>
-        /// Get image frames count.
-        /// </summary>
-        /// <returns>Frames count.</returns>
-        protected override int GetFramesCount()
-        {
-            return frames.Length;
-        }
-
         /// <summary>
         /// Set current frame to renderer.
         /// </summary>
@@ -56,6 +37,16 @@ namespace Mogoson.TwoDAnimation
         protected override void SetFrame(int frameIndex)
         {
             sRenderer.sprite = frames[frameIndex];
+        }
+        #endregion
+
+        #region Public Method
+        /// <summary>
+        /// Init animation.
+        /// </summary>
+        public override void Init()
+        {
+            sRenderer = GetComponent<SpriteRenderer>();
         }
         #endregion
     }

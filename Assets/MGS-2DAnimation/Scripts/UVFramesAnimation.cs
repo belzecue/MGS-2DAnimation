@@ -10,6 +10,7 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using Mogoson.IO;
 using UnityEngine;
 
 namespace Mogoson.TwoDAnimation
@@ -56,13 +57,6 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Protected Method
-        protected virtual void Start()
-        {
-            mRenderer = GetComponent<Renderer>();
-            framesCount = row * column;
-            ApplyUVMaps();
-        }
-
         /// <summary>
         /// Get image frames count.
         /// </summary>
@@ -84,6 +78,33 @@ namespace Mogoson.TwoDAnimation
 
         #region Public Method
         /// <summary>
+        /// Init animation.
+        /// </summary>
+        public override void Init()
+        {
+            mRenderer = GetComponent<Renderer>();
+            framesCount = row * column;
+            ApplyUVMaps();
+        }
+
+        /// <summary>
+        /// Refresh frames texture of animation.
+        /// </summary>
+        /// <param name="animation">Animation frames, type is FrameTextureData.</param>
+        public override void Refresh(object animation)
+        {
+            var frameData = animation as FrameTextureData;
+            if (frameData == null)
+            {
+                LogUtility.LogError("[UVFramesAnimation] Refresh error: the type of param is not FrameTextureData.");
+            }
+            else
+            {
+                SetSourceFrames(frameData.frames, frameData.row, frameData.column);
+            }
+        }
+
+        /// <summary>
         /// Set source frames of animation.
         /// </summary>
         /// <param name="frames">Frames texture.</param>
@@ -103,17 +124,43 @@ namespace Mogoson.TwoDAnimation
         /// </summary>
         public void ApplyUVMaps()
         {
+            frameWidth = 1.0f / column;
+            frameHeight = 1.0f / row;
+
+            Material material;
 #if UNITY_EDITOR
             if (mRenderer == null)
             {
                 mRenderer = GetComponent<Renderer>();
             }
+            material = mRenderer.sharedMaterial;
+#else
+            material = mRenderer.material;
 #endif
-            frameWidth = 1.0f / column;
-            frameHeight = 1.0f / row;
-            mRenderer.material.mainTextureOffset = Vector2.zero;
-            mRenderer.material.mainTextureScale = new Vector2(frameWidth, frameHeight);
+            material.mainTextureOffset = Vector2.zero;
+            material.mainTextureScale = new Vector2(frameWidth, frameHeight);
         }
         #endregion
+    }
+
+    /// <summary>
+    /// Data of frame texture.
+    /// </summary>
+    public class FrameTextureData
+    {
+        /// <summary>
+        /// Frames texture.
+        /// </summary>
+        public Texture frames;
+
+        /// <summary>
+        /// Row of frames.
+        /// </summary>
+        public int row;
+
+        /// <summary>
+        /// Column of frames.
+        /// </summary>
+        public int column;
     }
 }

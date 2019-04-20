@@ -37,13 +37,35 @@ namespace Mogoson.UAnimation
         /// Loop mode of animation.
         /// </summary>
         LoopMode LoopMode { set; get; }
+
+        /// <summary>
+        /// Animation is playing?
+        /// </summary>
+        bool IsPlaying { get; }
         #endregion
 
         #region Method
         /// <summary>
+        /// Init animation.
+        /// </summary>
+        void Init();
+
+        /// <summary>
         /// Play animation.
         /// </summary>
         void Play();
+
+        /// <summary>
+        /// Play animation.
+        /// </summary>
+        /// <param name="animation">Animation data.</param>
+        void Play(object animation);
+
+        /// <summary>
+        /// Refresh animation.
+        /// </summary>
+        /// <param name="animation">Animation data.</param>
+        void Refresh(object animation);
 
         /// <summary>
         /// Pause animation.
@@ -51,14 +73,15 @@ namespace Mogoson.UAnimation
         void Pause();
 
         /// <summary>
+        /// Rewind animation.
+        /// </summary>
+        /// <param name="progress">Progress of animation in the range[0~1]</param>
+        void Rewind(float progress = 0);
+
+        /// <summary>
         /// Stop animation.
         /// </summary>
         void Stop();
-
-        /// <summary>
-        /// Rewind animation.
-        /// </summary>
-        void Rewind();
         #endregion
     }
 }

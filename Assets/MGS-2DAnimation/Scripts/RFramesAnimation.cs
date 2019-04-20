@@ -19,14 +19,9 @@ namespace Mogoson.TwoDAnimation
     /// </summary>
     [AddComponentMenu("Mogoson/TwoDAnimation/RFramesAnimation")]
     [RequireComponent(typeof(Renderer))]
-    public class RFramesAnimation : FramesAnimation
+    public class RFramesAnimation : TFramesAnimation
     {
         #region Field and Property
-        /// <summary>
-        /// Frames texture of animation.
-        /// </summary>
-        public Texture[] frames;
-
         /// <summary>
         /// Renderer of animation.
         /// </summary>
@@ -34,20 +29,6 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Protected Method
-        protected virtual void Start()
-        {
-            mRenderer = GetComponent<Renderer>();
-        }
-
-        /// <summary>
-        /// Get image frames count.
-        /// </summary>
-        /// <returns>Frames count.</returns>
-        protected override int GetFramesCount()
-        {
-            return frames.Length;
-        }
-
         /// <summary>
         /// Set current frame to renderer.
         /// </summary>
@@ -55,6 +36,16 @@ namespace Mogoson.TwoDAnimation
         protected override void SetFrame(int frameIndex)
         {
             mRenderer.material.mainTexture = frames[frameIndex];
+        }
+        #endregion
+
+        #region Public Method
+        /// <summary>
+        /// Init animation.
+        /// </summary>
+        public override void Init()
+        {
+            mRenderer = GetComponent<Renderer>();
         }
         #endregion
     }

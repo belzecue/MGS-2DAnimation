@@ -29,7 +29,9 @@ namespace Mogoson.TwoDAnimation
             DrawDefaultInspector();
 
             if (GUILayout.Button("Apply UV Maps"))
+            {
                 Target.ApplyUVMaps();
+            }
         }
         #endregion
     }

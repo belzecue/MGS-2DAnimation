@@ -49,38 +49,66 @@ namespace Mogoson.UAnimation
             set { loop = value; }
             get { return loop; }
         }
+
+        /// <summary>
+        /// Animation is playing?
+        /// </summary>
+        public virtual bool IsPlaying
+        {
+            protected set;
+            get;
+        }
+        #endregion
+
+        #region Protected Method
+        protected virtual void Awake()
+        {
+            Init();
+        }
         #endregion
 
         #region Public Method
         /// <summary>
+        /// Init animation.
+        /// </summary>
+        public abstract void Init();
+
+        /// <summary>
         /// Play animation.
         /// </summary>
-        public virtual void Play()
+        public abstract void Play();
+
+        /// <summary>
+        /// Play animation.
+        /// </summary>
+        /// <param name="animation">Animation data.</param>
+        public virtual void Play(object animation)
         {
-            enabled = true;
+            Refresh(animation);
+            Play();
         }
+
+        /// <summary>
+        /// Refresh animation.
+        /// </summary>
+        /// <param name="animation">Animation data.</param>
+        public abstract void Refresh(object animation);
 
         /// <summary>
         /// Pause animation.
         /// </summary>
-        public virtual void Pause()
-        {
-            enabled = false;
-        }
-
-        /// <summary>
-        /// Stop animation.
-        /// </summary>
-        public virtual void Stop()
-        {
-            enabled = false;
-            Rewind();
-        }
+        public abstract void Pause();
 
         /// <summary>
         /// Rewind animation.
         /// </summary>
-        public abstract void Rewind();
+        /// <param name="progress">Progress of animation in the range[0~1]</param>
+        public abstract void Rewind(float progress);
+
+        /// <summary>
+        /// Stop animation.
+        /// </summary>
+        public abstract void Stop();
         #endregion
     }
 }
