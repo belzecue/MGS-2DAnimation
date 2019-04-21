@@ -46,11 +46,6 @@ namespace Mogoson.UAnimation
 
         #region Method
         /// <summary>
-        /// Init animation.
-        /// </summary>
-        void Init();
-
-        /// <summary>
         /// Play animation.
         /// </summary>
         void Play();

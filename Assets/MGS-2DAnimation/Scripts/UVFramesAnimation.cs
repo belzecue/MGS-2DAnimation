@@ -57,6 +57,13 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Protected Method
+        protected virtual void Awake()
+        {
+            mRenderer = GetComponent<Renderer>();
+            framesCount = row * column;
+            ApplyUVMaps();
+        }
+
         /// <summary>
         /// Get image frames count.
         /// </summary>
@@ -77,16 +84,6 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Public Method
-        /// <summary>
-        /// Init animation.
-        /// </summary>
-        public override void Init()
-        {
-            mRenderer = GetComponent<Renderer>();
-            framesCount = row * column;
-            ApplyUVMaps();
-        }
-
         /// <summary>
         /// Refresh frames texture of animation.
         /// </summary>

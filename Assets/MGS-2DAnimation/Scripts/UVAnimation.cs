@@ -36,6 +36,11 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Private Method
+        protected virtual void Awake()
+        {
+            mRenderer = GetComponent<Renderer>();
+        }
+
         protected virtual void Update()
         {
             mRenderer.material.mainTextureOffset += speed * coefficient * Time.deltaTime;
@@ -43,14 +48,6 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Public Method
-        /// <summary>
-        /// Init animation.
-        /// </summary>
-        public override void Init()
-        {
-            mRenderer = GetComponent<Renderer>();
-        }
-
         /// <summary>
         /// Play animation.
         /// </summary>

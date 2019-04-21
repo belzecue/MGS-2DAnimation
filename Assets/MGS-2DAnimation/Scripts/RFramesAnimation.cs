@@ -29,6 +29,11 @@ namespace Mogoson.TwoDAnimation
         #endregion
 
         #region Protected Method
+        protected virtual void Awake()
+        {
+            mRenderer = GetComponent<Renderer>();
+        }
+
         /// <summary>
         /// Set current frame to renderer.
         /// </summary>
@@ -36,16 +41,6 @@ namespace Mogoson.TwoDAnimation
         protected override void SetFrame(int frameIndex)
         {
             mRenderer.material.mainTexture = frames[frameIndex];
-        }
-        #endregion
-
-        #region Public Method
-        /// <summary>
-        /// Init animation.
-        /// </summary>
-        public override void Init()
-        {
-            mRenderer = GetComponent<Renderer>();
         }
         #endregion
     }

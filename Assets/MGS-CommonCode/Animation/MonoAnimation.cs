@@ -60,19 +60,7 @@ namespace Mogoson.UAnimation
         }
         #endregion
 
-        #region Protected Method
-        protected virtual void Awake()
-        {
-            Init();
-        }
-        #endregion
-
         #region Public Method
-        /// <summary>
-        /// Init animation.
-        /// </summary>
-        public abstract void Init();
-
         /// <summary>
         /// Play animation.
         /// </summary>
