@@ -82,28 +82,12 @@ namespace Mogoson.TwoDAnimation
 
         #region Public Method
         /// <summary>
-        /// Play animation.
-        /// </summary>
-        public override void Play()
-        {
-            enabled = IsPlaying = true;
-        }
-
-        /// <summary>
-        /// Pause animation.
-        /// </summary>
-        public override void Pause()
-        {
-            enabled = IsPlaying = false;
-        }
-
-        /// <summary>
         /// Rewind animation.
         /// </summary>
         /// <param name="progress">Progress of animation in the range[0~1]</param>
         public override void Rewind(float progress)
         {
-            progress = Mathf.Clamp(progress, 0, 1);
+            progress = Mathf.Clamp01(progress);
             index = progress * (GetFramesCount() - 1);
             SetFrame((int)index);
         }
@@ -112,19 +96,10 @@ namespace Mogoson.TwoDAnimation
         /// Rewind animation.
         /// </summary>
         /// <param name="frameIndex">Index of rewind frame.</param>
-        public virtual void Rewind(int frameIndex)
+        public void Rewind(int frameIndex)
         {
             index = Mathf.Clamp(frameIndex, 0, GetFramesCount() - 1);
             SetFrame((int)index);
-        }
-
-        /// <summary>
-        /// Stop animation.
-        /// </summary>
-        public override void Stop()
-        {
-            enabled = IsPlaying = false;
-            Rewind(0);
         }
         #endregion
     }

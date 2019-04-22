@@ -64,7 +64,10 @@ namespace Mogoson.UAnimation
         /// <summary>
         /// Play animation.
         /// </summary>
-        public abstract void Play();
+        public virtual void Play()
+        {
+            enabled = IsPlaying = true;
+        }
 
         /// <summary>
         /// Play animation.
@@ -85,7 +88,10 @@ namespace Mogoson.UAnimation
         /// <summary>
         /// Pause animation.
         /// </summary>
-        public abstract void Pause();
+        public virtual void Pause()
+        {
+            enabled = IsPlaying = false;
+        }
 
         /// <summary>
         /// Rewind animation.
@@ -96,7 +102,11 @@ namespace Mogoson.UAnimation
         /// <summary>
         /// Stop animation.
         /// </summary>
-        public abstract void Stop();
+        public virtual void Stop()
+        {
+            enabled = IsPlaying = false;
+            Rewind(0);
+        }
         #endregion
     }
 }

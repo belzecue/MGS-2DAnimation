@@ -49,26 +49,11 @@ namespace Mogoson.TwoDAnimation
 
         #region Public Method
         /// <summary>
-        /// Play animation.
-        /// </summary>
-        public override void Play()
-        {
-            enabled = IsPlaying = true;
-        }
-
-        /// <summary>
-        /// Pause animation.
-        /// </summary>
-        public override void Pause()
-        {
-            enabled = IsPlaying = false;
-        }
-
-        /// <summary>
         /// Rewind animation.
         /// </summary>
         public override void Rewind(float progress)
         {
+            progress = Mathf.Clamp01(progress);
             Rewind(Vector2.one * progress);
         }
 
@@ -96,15 +81,6 @@ namespace Mogoson.TwoDAnimation
             {
                 mRenderer.material.mainTexture = newFrames;
             }
-        }
-
-        /// <summary>
-        /// Stop animation.
-        /// </summary>
-        public override void Stop()
-        {
-            enabled = IsPlaying = false;
-            Rewind(0);
         }
         #endregion
     }
