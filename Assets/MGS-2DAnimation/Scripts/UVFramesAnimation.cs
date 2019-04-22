@@ -87,17 +87,17 @@ namespace Mogoson.TwoDAnimation
         /// <summary>
         /// Refresh frames texture of animation.
         /// </summary>
-        /// <param name="animation">Animation frames, type is FrameTextureData.</param>
-        public override void Refresh(object animation)
+        /// <param name="frames">Animation frames, type is FrameTextureData.</param>
+        public override void Refresh(object frames)
         {
-            var frameData = animation as FrameTextureData;
-            if (frameData == null)
+            var newFrames = frames as FrameTextureData;
+            if (newFrames == null)
             {
-                LogUtility.LogError("[UVFramesAnimation] Refresh error: the type of param is not FrameTextureData.");
+                LogUtility.LogError("[UVFramesAnimation] Refresh error: the type of frames is not FrameTextureData.");
             }
             else
             {
-                SetSourceFrames(frameData.frames, frameData.row, frameData.column);
+                SetSourceFrames(newFrames.frames, newFrames.row, newFrames.column);
             }
         }
 
@@ -159,5 +159,18 @@ namespace Mogoson.TwoDAnimation
         /// Column of frames.
         /// </summary>
         public int column;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="frames">Frames texture.</param>
+        /// <param name="row">Row of frames.</param>
+        /// <param name="column">Column of frames.</param>
+        public FrameTextureData(Texture frames, int row, int column)
+        {
+            this.frames = frames;
+            this.row = row;
+            this.column = column;
+        }
     }
 }

@@ -51,7 +51,7 @@ namespace Mogoson.TwoDAnimation
         /// <summary>
         /// Rewind animation.
         /// </summary>
-        public override void Rewind(float progress)
+        public override void Rewind(float progress = 0)
         {
             progress = Mathf.Clamp01(progress);
             Rewind(Vector2.one * progress);
@@ -60,22 +60,22 @@ namespace Mogoson.TwoDAnimation
         /// <summary>
         /// Rewind animation.
         /// </summary>
-        /// <param name="uvMapOffset">UV map offset.</param>
-        public void Rewind(Vector2 uvMapOffset)
+        /// <param name="uvOffset">UV map offset.</param>
+        public void Rewind(Vector2 uvOffset)
         {
-            mRenderer.material.mainTextureOffset = uvMapOffset;
+            mRenderer.material.mainTextureOffset = uvOffset;
         }
 
         /// <summary>
         /// Refresh frames sprite of animation.
         /// </summary>
-        /// <param name="animation">Animation frames, type is Texture.</param>
-        public override void Refresh(object animation)
+        /// <param name="frames">Animation frames, type is Texture.</param>
+        public override void Refresh(object frames)
         {
-            var newFrames = animation as Texture;
+            var newFrames = frames as Texture;
             if (newFrames == null)
             {
-                LogUtility.LogError("[UVAnimation] Refresh error: the type of param is not Texture.");
+                LogUtility.LogError("[UVAnimation] Refresh error: the type of frames is not Texture.");
             }
             else
             {

@@ -44,18 +44,18 @@ namespace Mogoson.TwoDAnimation
         /// <summary>
         /// Refresh frames texture of animation.
         /// </summary>
-        /// <param name="animation">Animation frames, type is IEnumerable<Sprite>.</param>
-        public override void Refresh(object animation)
+        /// <param name="frames">Animation frames, type is IEnumerable<Sprite>.</param>
+        public override void Refresh(object frames)
         {
-            var newFrames = animation as IEnumerable<Sprite>;
+            var newFrames = frames as IEnumerable<Sprite>;
             if (newFrames == null)
             {
-                LogUtility.LogError("[SFramesAnimation] Refresh error: the type of param is not IEnumerable<Sprite>.");
+                LogUtility.LogError("[SFramesAnimation] Refresh error: the type of frames is not IEnumerable<Sprite>.");
             }
             else
             {
-                frames.Clear();
-                frames.AddRange(newFrames);
+                this.frames.Clear();
+                this.frames.AddRange(newFrames);
                 Rewind(0);
             }
         }

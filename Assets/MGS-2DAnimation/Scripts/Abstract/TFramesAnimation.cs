@@ -44,17 +44,17 @@ namespace Mogoson.TwoDAnimation
         /// <summary>
         /// Refresh frames texture of animation.
         /// </summary>
-        /// <param name="animation">Animation frames, type is IEnumerable<Texture> or IEnumerable<Texture2D>.</param>
-        public override void Refresh(object animation)
+        /// <param name="frames">Animation frames, type is IEnumerable<Texture> or IEnumerable<Texture2D>.</param>
+        public override void Refresh(object frames)
         {
             IEnumerable<Texture> newFrames = null;
-            if (animation is IEnumerable<Texture>)
+            if (frames is IEnumerable<Texture>)
             {
-                newFrames = animation as IEnumerable<Texture>;
+                newFrames = frames as IEnumerable<Texture>;
             }
-            else if (animation is IEnumerable<Texture2D>)
+            else if (frames is IEnumerable<Texture2D>)
             {
-                var frames2D = animation as IEnumerable<Texture2D>;
+                var frames2D = frames as IEnumerable<Texture2D>;
                 var framesList = new List<Texture>();
                 foreach (var frame in frames2D)
                 {
@@ -64,12 +64,12 @@ namespace Mogoson.TwoDAnimation
             }
             else
             {
-                LogUtility.LogError("[TFramesAnimation] Refresh error: the type of param is not IEnumerable<Texture> or IEnumerable<Texture2D>.");
+                LogUtility.LogError("[TFramesAnimation] Refresh error: the type of frames is not IEnumerable<Texture> or IEnumerable<Texture2D>.");
                 return;
             }
 
-            frames.Clear();
-            frames.AddRange(newFrames);
+            this.frames.Clear();
+            this.frames.AddRange(newFrames);
             Rewind(0);
         }
         #endregion
