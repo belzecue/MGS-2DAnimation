@@ -6,14 +6,7 @@
 
 ## 环境
 - Unity 5.0 或更高版本。
-- .Net Framework 3.0 或更高版本。
-
-## 实现
-- RFramesAnimation ：基于渲染器Renderer显示的序列帧（多个单帧图片）动画。
-- SRFramesAnimation ：基于精灵渲染器Sprite Renderer显示的序列帧（多个单帧图片）动画。
-- UIFramesAnimation ：基于UI组件Image显示的序列帧（多个单帧图片）动画。
-- UVFramesAnimation ：基于渲染器Renderer显示的序列帧（一个多帧图片）动画。
-- UVAnimation ：基于渲染器Renderer显示的UV映射偏移动画。
+- .Net Framework 3.5 或更高版本。
 
 ## 案例
 - “MGS-2DAnimation\Scenes”目录下存有上述功能的演示案例，供读者参考。
@@ -21,11 +14,11 @@
 ## 预览
 - Renderer Frames
 
-![Renderer Frames](./Attachments/README_Image/RendererFrames.gif)
+![Renderer Frames](./Attachment/README_Image/RendererFrames.gif)
 
 - UV Animation
 
-![UV Animation](./Attachments/README_Image/UVAnimation.gif)
+![UV Animation](./Attachment/README_Image/UVAnimation.gif)
 
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@outlook.com联系我。
