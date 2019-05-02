@@ -20,5 +20,9 @@
 
 ![UV Animation](./Attachment/README_Image/UVAnimation.gif)
 
+- Gif Animation
+
+![Gif Animation](./Attachment/README_Image/GifAnimation.gif)
+
 ## Contact
 - If you have any questions, feel free to contact me at mogoson@outlook.com.

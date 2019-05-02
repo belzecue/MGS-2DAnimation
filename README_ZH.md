@@ -20,5 +20,9 @@
 
 ![UV Animation](./Attachment/README_Image/UVAnimation.gif)
 
+- Gif Animation
+
+![Gif Animation](./Attachment/README_Image/GifAnimation.gif)
+
 ## 联系
 - 如果你有任何问题或者建议，欢迎通过mogoson@outlook.com联系我。
