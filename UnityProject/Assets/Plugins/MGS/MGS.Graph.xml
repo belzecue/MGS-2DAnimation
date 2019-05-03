@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.Graph</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.Graph.GraphUtility">
+            <summary>
+            Utility for graph.
+            </summary>
+        </member>
+        <member name="M:MGS.Graph.GraphUtility.GifToFrames(System.String,System.Action{System.Collections.Generic.List{UnityEngine.Texture2D}})">
+            <summary>
+            Convert gif image to frames textures.
+            </summary>
+            <param name="filePath">Path of gif file.</param>
+            <param name="onLoaded">On loaded callback.</param>
+        </member>
+        <member name="M:MGS.Graph.GraphUtility.GifToFrames(System.Drawing.Image,System.Action{System.Collections.Generic.List{UnityEngine.Texture2D}})">
+            <summary>
+            Convert gif image to frames textures.
+            </summary>
+            <param name="gif">Gif image.</param>
+            <param name="onLoaded">On loaded callback.</param>
+            <returns>IEnumerator.</returns>
+        </member>
+        <member name="M:MGS.Graph.GraphUtility.BitmapToBytes(System.Drawing.Bitmap)">
+            <summary>
+            Convert bitmap to bytes data.
+            </summary>
+            <param name="bitmap">Bitmap to convert.</param>
+            <returns>Bytes data of bitmap.</returns>
+        </member>
+    </members>
+</doc>

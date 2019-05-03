@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MGS.UAnimation</name>
+    </assembly>
+    <members>
+        <member name="T:MGS.UAnimation.FramesAnimation">
+            <summary>
+            Animation base on key frames.
+            </summary>
+        </member>
+        <member name="E:MGS.UAnimation.FramesAnimation.OnLastFrame">
+            <summary>
+            Event of animation play on last frame.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.FramesAnimation.index">
+            <summary>
+            Index of current frame.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.FramesAnimation.Update">
+            <summary>
+            Update animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.FramesAnimation.GetFramesCount">
+            <summary>
+            Get image frames count.
+            </summary>
+            <returns>Frames count</returns>
+        </member>
+        <member name="M:MGS.UAnimation.FramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="M:MGS.UAnimation.FramesAnimation.Rewind(System.Single)">
+            <summary>
+            Rewind animation.
+            </summary>
+            <param name="progress">Progress of animation in the range[0~1]</param>
+        </member>
+        <member name="M:MGS.UAnimation.FramesAnimation.Rewind(System.Int32)">
+            <summary>
+            Rewind animation.
+            </summary>
+            <param name="frameIndex">Index of rewind frame.</param>
+        </member>
+        <member name="T:MGS.UAnimation.SFramesAnimation">
+            <summary>
+            Animation base on frames sprites.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.SFramesAnimation.frames">
+            <summary>
+            Frames sprite of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.SFramesAnimation.GetFramesCount">
+            <summary>
+            Get frames count.
+            </summary>
+            <returns>Frames count.</returns>
+        </member>
+        <member name="M:MGS.UAnimation.SFramesAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh frames texture of animation.
+            </summary>
+            <param name="frames">Animation frames, type is IEnumerable of Sprite.</param>
+        </member>
+        <member name="T:MGS.UAnimation.TFramesAnimation">
+            <summary>
+            Animation base on frames textutes.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.TFramesAnimation.frames">
+            <summary>
+            Frames texture of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.TFramesAnimation.GetFramesCount">
+            <summary>
+            Get frames count.
+            </summary>
+            <returns>Frames count.</returns>
+        </member>
+        <member name="M:MGS.UAnimation.TFramesAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh frames texture of animation.
+            </summary>
+            <param name="frames">Animation frames, type is IEnumerable of Texture or Texture2D.</param>
+        </member>
+        <member name="T:MGS.UAnimation.IFramesAnimation">
+            <summary>
+            Sequence frames animation base on Image.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.IFramesAnimation.image">
+            <summary>
+            Renderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.IFramesAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.IFramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="T:MGS.UAnimation.IAnimation">
+            <summary>
+            Interface of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.IAnimation.Speed">
+            <summary>
+            Speed of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.IAnimation.LoopMode">
+            <summary>
+            Loop mode of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.IAnimation.IsPlaying">
+            <summary>
+            Animation is playing?
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Play">
+            <summary>
+            Play animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Play(System.Object)">
+            <summary>
+            Play animation.
+            </summary>
+            <param name="data">Animation data.</param>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh animation.
+            </summary>
+            <param name="data">Animation data.</param>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Pause">
+            <summary>
+            Pause animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Rewind(System.Single)">
+            <summary>
+            Rewind animation.
+            </summary>
+            <param name="progress">Progress of animation in the range[0~1]</param>
+        </member>
+        <member name="M:MGS.UAnimation.IAnimation.Stop">
+            <summary>
+            Stop animation.
+            </summary>
+        </member>
+        <member name="T:MGS.UAnimation.LoopMode">
+            <summary>
+            Loop mode of animation.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.LoopMode.Once">
+            <summary>
+            Animation just play once.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.LoopMode.Loop">
+            <summary>
+            Animation loop play.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.LoopMode.PingPong">
+            <summary>
+            Animation play like ping pong.
+            </summary>
+        </member>
+        <member name="T:MGS.UAnimation.MonoAnimation">
+            <summary>
+            Mono animation.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.MonoAnimation.speed">
+            <summary>
+            Speed of animation.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.MonoAnimation.loop">
+            <summary>
+            Loop mode of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.MonoAnimation.Speed">
+            <summary>
+            Speed of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.MonoAnimation.LoopMode">
+            <summary>
+            Loop mode of animation.
+            </summary>
+        </member>
+        <member name="P:MGS.UAnimation.MonoAnimation.IsPlaying">
+            <summary>
+            Animation is playing?
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Play">
+            <summary>
+            Play animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Play(System.Object)">
+            <summary>
+            Play animation.
+            </summary>
+            <param name="data">Animation data.</param>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh animation.
+            </summary>
+            <param name="data">Animation data.</param>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Pause">
+            <summary>
+            Pause animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Rewind(System.Single)">
+            <summary>
+            Rewind animation.
+            </summary>
+            <param name="progress">Progress of animation in the range[0~1]</param>
+        </member>
+        <member name="M:MGS.UAnimation.MonoAnimation.Stop">
+            <summary>
+            Stop animation.
+            </summary>
+        </member>
+        <member name="T:MGS.UAnimation.RFramesAnimation">
+            <summary>
+            Sequence frames animation base on Renderer.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.RFramesAnimation.mRenderer">
+            <summary>
+            Renderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.RFramesAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.RFramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="T:MGS.UAnimation.RIFramesAnimation">
+            <summary>
+            Sequence frames animation base on RawImage.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.RIFramesAnimation.rawImage">
+            <summary>
+            Renderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.RIFramesAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.RIFramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="T:MGS.UAnimation.SRFramesAnimation">
+            <summary>
+            Sequence frames animation base on SpriteRenderer.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.SRFramesAnimation.sRenderer">
+            <summary>
+            SpriteRenderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.SRFramesAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.SRFramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="T:MGS.UAnimation.UVAnimation">
+            <summary>
+            Animation base on UV offset.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVAnimation.coefficient">
+            <summary>
+            Speed coefficient of move uv map.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVAnimation.mRenderer">
+            <summary>
+            Renderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVAnimation.Update">
+            <summary>
+            Component update.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVAnimation.Rewind(System.Single)">
+            <summary>
+            Rewind animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVAnimation.Rewind(UnityEngine.Vector2)">
+            <summary>
+            Rewind animation.
+            </summary>
+            <param name="uvOffset">UV map offset.</param>
+        </member>
+        <member name="M:MGS.UAnimation.UVAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh frames sprite of animation.
+            </summary>
+            <param name="frames">Animation frames, type is Texture.</param>
+        </member>
+        <member name="T:MGS.UAnimation.UVFramesAnimation">
+            <summary>
+            Sequence frames animation base on UV offset.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.row">
+            <summary>
+            Row of frames.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.column">
+            <summary>
+            Column of frames.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.framesCount">
+            <summary>
+            Count of image frames.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.frameWidth">
+            <summary>
+            Width of a frame.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.frameHeight">
+            <summary>
+            Height of a frame.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.UVFramesAnimation.mRenderer">
+            <summary>
+            Renderer of animation.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.Awake">
+            <summary>
+            Component awake.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.GetFramesCount">
+            <summary>
+            Get image frames count.
+            </summary>
+            <returns>Frames count</returns>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.SetFrame(System.Int32)">
+            <summary>
+            Set current frame to renderer.
+            </summary>
+            <param name="frameIndex">Index of frame.</param>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.Refresh(System.Object)">
+            <summary>
+            Refresh frames texture of animation.
+            </summary>
+            <param name="frames">Animation frames, type is FrameTextureData.</param>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.SetSourceFrames(UnityEngine.Texture,System.Int32,System.Int32)">
+            <summary>
+            Set source frames of animation.
+            </summary>
+            <param name="frames">Frames texture.</param>
+            <param name="row">Row of frames.</param>
+            <param name="column">Column of frames.</param>
+        </member>
+        <member name="M:MGS.UAnimation.UVFramesAnimation.ApplyUVMaps">
+            <summary>
+            Apply main textute uv maps.
+            </summary>
+        </member>
+        <member name="T:MGS.UAnimation.FrameTextureData">
+            <summary>
+            Data of frame texture.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.FrameTextureData.frames">
+            <summary>
+            Frames texture.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.FrameTextureData.row">
+            <summary>
+            Row of frames.
+            </summary>
+        </member>
+        <member name="F:MGS.UAnimation.FrameTextureData.column">
+            <summary>
+            Column of frames.
+            </summary>
+        </member>
+        <member name="M:MGS.UAnimation.FrameTextureData.#ctor(UnityEngine.Texture,System.Int32,System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="frames">Frames texture.</param>
+            <param name="row">Row of frames.</param>
+            <param name="column">Column of frames.</param>
+        </member>
+    </members>
+</doc>
